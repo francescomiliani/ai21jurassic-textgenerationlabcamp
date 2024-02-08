@@ -1,6 +1,8 @@
 # ai21jurassic-textgenerationlabcamp
+
 AI21 Jurassic 2 LLM in Text Generation Labcamp
 
+## Setup
 
 Creating and setting up a Python virtual environment (venv) is a good practice to isolate project dependencies and avoid conflicts between different projects. Here's a step-by-step guide to creating and activating a Python virtual environment:
 
@@ -45,42 +47,34 @@ Creating and setting up a Python virtual environment (venv) is a good practice t
    deactivate
    ```
 
-### Using Visual Studio Code:
+### MAIN
 
-If you're using Visual Studio Code, you can create and manage virtual environments directly from the integrated terminal. Here's a brief guide:
 
-1. **Open your project in Visual Studio Code.**
+```bash
+python main.py
+```
 
-2. **Open the integrated terminal:**
-   - Use the keyboard shortcut `Ctrl + `` (backtick) on Windows/Linux or `Cmd + `` on macOS.
-   - Alternatively, you can go to `View -> Terminal` from the menu.
+### Examples
 
-3. **Run the following commands in the terminal:**
-   ```bash
-   python -m venv venv
-   ```
+#### 1. Tokenization (token counting)
 
-4. **Activate the virtual environment:**
-   ```bash
-   .\venv\Scripts\activate      # On Windows
-   source venv/bin/activate     # On macOS/Linux
-   ```
+Example of output: 'some text' => 2
 
-5. **Install packages as needed:**
-   ```bash
-   pip install package_name
-   ```
+#### 2. Chat completion
 
-6. **Deactivate the virtual environment:**
-   ```bash
-   deactivate
-   ```
+Example of input: 'What are my favorite'
+Example of output: 'books?'
 
-Remember to activate the virtual environment every time you work on your project and deactivate it when you're finished. This helps keep your project dependencies isolated and avoids conflicts with other projects.
+#### 3. Chat
 
-### Token amount consideration
-Each message passed to the API consumes the number of tokens in the content, role, and other fields, plus a few extra for behind-the-scenes formatting. This may change slightly in the future.
-
-If a conversation has too many tokens to fit within a model’s maximum limit (e.g., more than 4097 tokens for gpt-3.5-turbo), you will have to truncate, omit, or otherwise shrink your text until it fits. Beware that if a message is removed from the messages input, the model will lose all knowledge of it.
-
-Note that very long conversations are more likely to receive incomplete replies. For example, a gpt-3.5-turbo conversation that is 4090 tokens long will have its reply cut off after just 6 tokens.
+Example of input: 'These are a few of my favorite'
+Example of output: '1. "The Shawshank Redemption"
+2. "The Godfather"
+3. "The Dark Knight"
+4. "Goodfellas"
+5. "The Lord of the Rings: The Return of the King"
+6. "Schindler's List"
+7. "The Prestige"
+8. "The Dark Knight"
+9. "The Matrix"
+10. "Fight Club"'
