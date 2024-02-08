@@ -63,6 +63,8 @@ for i in range(len(response_mid.completions)):
     print("\n")
 
 # Example 2 - Chat
+## Reference: https://github.com/AI21Labs/ai21-python/blob/main/examples/studio/chat.py
+
 system = "You're a support engineer in a SaaS company"
 
 # Messages example
@@ -88,6 +90,14 @@ while True:
             # top_p=1,
             # frequency_penalty=0,
             # presence_penalty=0,
+            # count_penalty=Penalty(
+            #     scale=0,
+            #     apply_to_emojis=False,
+            #     apply_to_numbers=False,
+            #     apply_to_stopwords=False,
+            #     apply_to_punctuation=False,
+            #     apply_to_whitespaces=False,
+            # ),
             # stop_sequences=["\n", "System:", "User:"],
         )
         # print(response)
