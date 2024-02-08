@@ -47,9 +47,11 @@ Creating and setting up a Python virtual environment (venv) is a good practice t
    deactivate
    ```
 
-### MAIN
+###
 
-
+1. Rename the file `.env.example` to `.env`
+2. Place inside the API KEY got from AI21 Studio website.
+3. Run the code
 ```bash
 python main.py
 ```
