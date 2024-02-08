@@ -4,9 +4,7 @@ AI21 Jurassic 2 LLM in Text Generation Labcamp
 
 ## Setup
 
-Creating and setting up a Python virtual environment (venv) is a good practice to isolate project dependencies and avoid conflicts between different projects. Here's a step-by-step guide to creating and activating a Python virtual environment:
-
-### Using Command Line:
+### 1. Virtual Enviroment creation
 
 1. **Open a terminal or command prompt:**
    - On Windows, you can use Command Prompt or PowerShell.
@@ -47,7 +45,14 @@ Creating and setting up a Python virtual environment (venv) is a good practice t
    deactivate
    ```
 
-###
+### 2. Packages installation
+
+Run the following command to install all packages needed:
+```bash
+pip install -r requirements.txt
+```
+
+### 3. API KEY and go!
 
 1. Rename the file `.env.example` to `.env`
 2. Place inside the API KEY got from AI21 Studio website.
