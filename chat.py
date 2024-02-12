@@ -5,9 +5,9 @@
 ## GitHub: https://github.com/AI21Labs/ai21-python
 
 from dotenv import load_dotenv
-import os, json
+import os
 from ai21 import AI21Client, AI21APIError
-from ai21.models import ChatMessage, RoleType, Penalty
+from ai21.models import ChatMessage, RoleType
 from ai21 import errors as ai21_errors
 # Load variables from the .env file
 load_dotenv()
@@ -17,24 +17,6 @@ print(f"\t API_KEY: {API_KEY}")
  
 client = AI21Client(api_key=API_KEY)
 
-_prompt = """
-Complete the following sentence.
-Sentence: These are a few of my favorite
-Completion: things. Cream-colored ponies and crisp apple strudels.
-
-##
-
-Complete the following sentence.
-Sentence: These are a few of my favorite
-Completion: rock bands: The Beatles, The Doors, Fleetwood Mac.
-
-##
-
-Complete the following sentence.
-Sentence: These are a few of my favorite
-Completion:
-"""
-
 # J2 Mid
 
 # Example 0 - Token Counting
@@ -42,27 +24,7 @@ example_text = "This is an example text"
 amount = client.count_tokens(text=example_text)  # returns int
 print(f'Token Counting of \'{example_text}\': {amount}')
 
-print(f'Prompt: {_prompt}')
-
-## Example 1 - Completion
-response_mid = client.completion.create(
-  model="j2-mid",
-  #prompt="These are a few of my favorite",
-  prompt=_prompt,
-  num_results=1,
-  max_tokens=2,
-  temperature=0.4,
-  top_k_return=0,
-  top_p=1,
-  stop_sequences=["##"]
-)
-
-# print(response_mid)
-for i in range(len(response_mid.completions)):
-    print(response_mid.completions[i].data.text)
-    print("\n")
-
-# Example 2 - Chat
+# Example 1 - Chat
 ## Reference: https://github.com/AI21Labs/ai21-python/blob/main/examples/studio/chat.py
 
 system = "You're a support engineer in a SaaS company"
